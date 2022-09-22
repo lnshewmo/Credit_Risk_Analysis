@@ -31,23 +31,29 @@ FastLending, a peer to peer lending service would like to use machine learning t
 
 **Class imbalance** - One data class is larger (majority) than the other (minority).  This can cause models to be biased toward the majority class.  In this case, the high-risk applicants belonging to the minority class are of more interest to the business objectives.
 
+---
+
 ### Selected Machine Learning Models
 
-Six models were selected which employ different strategies to predict imbalanced data.
+Six models were selected which employ different strategies for imbalanced data.
+
+`credit_risk_resampling.ipynb` contains the code for the first 4 models listed below
+
+`credit_risk_ensemble.ipynb` contains the code for the final 2 models
 
 ---
 
-**Strategies to balance the classes by increasing the size of the minority class (resampling) to match the majority class:**
+**Balance the classes by increasing the size of the minority class (resampling) to match the majority class:**
 
 1. (Naive Random) Oversampling: instances from the minority class are randomly resampled 
 
 2. Synthetic Minority Oversampling Technique (SMOTE): new instances are interpolated from the minority class 
 
-**Strategy to reduce the size of the majority class to match the minority class:**
+**Reduce the size of the majority class to match the minority class:**
 
 3. Cluster Centroid Undersampling: synthetic data points which represent clusters in the the majority class are generated
 
-**Combination strategies:**
+**Combination strategy:**
 
 4. SMOTE and Edited Nearest Neighbors (SMOTEENN): begins by oversampling the minority class with SMOTE, then undersamples by dropping datapoints where the 2 nearest neighboring points belong to 2 different classes.
 
