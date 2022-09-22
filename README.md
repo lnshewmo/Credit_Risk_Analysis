@@ -14,52 +14,56 @@ Precision Score - the rate at which the model correctly predicts a classificatio
 
 Recall (Sensitivity) - the rate at which the model correctly detects a classification (Did it find them all?)
 
+F1 score (Harmonic Mean) - a weighted average measuring the balance between precision and sensitivity
+
+
+###Resources:
+
+- Jupyter Notebook
+- Scikit-learn library
+- Imbalanced-learn library
+- Pandas library
+- [loans_data.csv](https://github.com/lnshewmo/Credit_Risk_Analysis/blob/main/LoanStats_2019Q1.csv)
 
 
 
-Background:
+###Definitions:
 
+Machine Learning process flow: Instantiate model, Fit/Resample, Train, Predict, Evaluate Model Performance
 
-Steps in Machine Learning:
-Instantiate model, Fit/Resample, Train, Predict, Evaluate Model Performance
+Class imbalance - One class of data is much larger (majority class) than the other class (minority).  This can cause models to be biased toward majority class.  In this case, the low-risk applicants belong to the majority class and the high-rish applicants belong to the minority class.
 
-Class imbalance - One class of data is much larger (majority class) than the other class (minority).  This can cause models to be biased toward majority class.  
+Strategies to balance the classes by increasing the size of the minority class (resampling) to match the majority class:
 
-Strategies to balance the classes by increasing the size of the minority class (resampling):
-
-- Random Oversampling: instances from the minority class are randomly resampled
+- Random Oversampling: instances from the minority class are randomly resampled 
 
 - Synthetic Minority Oversampling Technique (SMOTE): new instances are interpolated from the minority class 
 
-Strategy reduces the size of the majority class to match the minority class:
+Strategy to reduce the size of the majority class to match the minority class:
 
 - Cluster Centroid Undersampling: generates synthetic data points (centroids) which represent clusters in the the data 
 
 Combination strategies:
 
-- SMOTE and Edited Nearest Neighbors (SMOTEENN): first oversamples minority class with SMOTE, then undersamples by dropping datapoints where the 2 nearest neighboring points belong to 2 different classes.
+- SMOTE and Edited Nearest Neighbors (SMOTEENN): begin by oversampling the minority class with SMOTE, then undersample by dropping datapoints where the 2 nearest neighboring points belong to 2 different classes.
 
 Ensemble strategies:
 
-- Balanced Random Forest Classifier: A collection of decision trees (random forest classifiers) in which each tree is provied a balanced boostrap sample
+- Balanced Random Forest Classifier: A collection of decision trees (random forest classifiers) are trained concurrently in which each tree is provided a balanced boostrap sample
 
--Adaptive Boosting (AdaBoost): ensemble technique which trains a sequence of weak models, where each model learns from the errors of the previous model
+-Adaptive Boosting (AdaBoost): A sequence of weak models are trained consecutively, where each model learns from the errors of the previous model
 
 ##Results: 
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
+Table 1: Summary Confusion Matrices for 6 models
 
-Balanced Accuracy Score -
-Precision -
-Recall -
+Table 2: Top 5 Features in Order of Importance from the Balanced Random Forest Classifier Model
 
-
+Table 2: Accuracy and Imbalanced Classification Report Summary for 6 models
 
 
 ##Summary: 
 
-Balance between precision and sensitivity.  
-With reduction of loan default rates as the objective, increased recall of the model to the minority class (high-risk loans) is the prioritized criteria for selecting an appropriate model.    
+With reduction of loan default rates as the objective, increased recall of the model to the minority class (high-risk loans) is the prioritized criteria for selecting an appropriate model.  
 
-
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
+Of the 6 models evaluated, the Easy Ensemble (AdaBoost) model shows the greatest recall (92%), least number of false negatives (983), highest accuracy (93%), better precision (9%), and best F1 score.  These figures should be translated to real dollars and compared to the current protocol for evaluating loan applications to determine if this model is an improvement.  If not, there may be other algorithms or features to include for further testing.
