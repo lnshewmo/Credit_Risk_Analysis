@@ -33,29 +33,29 @@ FastLending, a peer to peer lending service would like to use machine learning t
 
 ### Selected Machine Learning Models
 
-Six models were selected which employ different strategies to predicting imbalanced data.
+Six models were selected which employ different strategies to predict imbalanced data.
 
 ---
 
 **Strategies to balance the classes by increasing the size of the minority class (resampling) to match the majority class:**
 
-- (Naive Random) Oversampling: instances from the minority class are randomly resampled 
+1. (Naive Random) Oversampling: instances from the minority class are randomly resampled 
 
-- Synthetic Minority Oversampling Technique (SMOTE): new instances are interpolated from the minority class 
+2. Synthetic Minority Oversampling Technique (SMOTE): new instances are interpolated from the minority class 
 
 **Strategy to reduce the size of the majority class to match the minority class:**
 
-- Cluster Centroid Undersampling: synthetic data points which represent clusters in the the majority class are generated
+3. Cluster Centroid Undersampling: synthetic data points which represent clusters in the the majority class are generated
 
 **Combination strategies:**
 
-- SMOTE and Edited Nearest Neighbors (SMOTEENN): begins by oversampling the minority class with SMOTE, then undersamples by dropping datapoints where the 2 nearest neighboring points belong to 2 different classes.
+4. SMOTE and Edited Nearest Neighbors (SMOTEENN): begins by oversampling the minority class with SMOTE, then undersamples by dropping datapoints where the 2 nearest neighboring points belong to 2 different classes.
 
 **Ensemble strategies:**
 
-- Balanced Random Forest Classifier: A collection of decision trees (random forest classifiers) are trained concurrently in which each tree is provided a balanced bootstrap sample
+5. Balanced Random Forest Classifier: A collection of decision trees (random forest classifiers) are trained concurrently in which each tree is provided a balanced bootstrap sample
 
-- Adaptive Boosting (AdaBoost): A sequence of weak models are trained consecutively, where each model learns from the errors of the previous model
+6. Adaptive Boosting (AdaBoost): A sequence of weak models are trained consecutively, where each model learns from the errors of the previous model
 
 ## Results: 
 
