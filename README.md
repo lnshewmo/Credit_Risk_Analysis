@@ -1,8 +1,9 @@
-# Credit_Risk_Analysis
+# Credit Risk Analysis
 
-Using supervised machine learning algorithms to predict credit risk:  
+#### Using supervised machine learning algorithms to predict credit risk
+---
 
-##Overview
+## Overview
  
 Purpose: FastLending, a peer to peer lending service would like to use machine learning to predict credit risk in order to expedite the lending process and more accurately identify high and low risk candidates for loans, lowering default rates.  Six different algorithms, using different strategies for imbalanced data, were instantiated and evaluated for their predictive performance using the following metrics:
 
@@ -17,7 +18,7 @@ Recall (Sensitivity) - the rate at which the model correctly detects a classific
 F1 score (Harmonic Mean) - a weighted average measuring the balance between precision and sensitivity
 
 
-###Resources:
+### Resources:
 
 - Jupyter Notebook
 - Scikit-learn library
@@ -25,9 +26,7 @@ F1 score (Harmonic Mean) - a weighted average measuring the balance between prec
 - Pandas library
 - [loans_data.csv](https://github.com/lnshewmo/Credit_Risk_Analysis/blob/main/LoanStats_2019Q1.csv)
 
-
-
-###Definitions:
+### Definitions:
 
 Machine Learning process flow: Instantiate model, Fit/Resample, Train, Predict, Evaluate Model Performance
 
@@ -53,7 +52,7 @@ Ensemble strategies:
 
 -Adaptive Boosting (AdaBoost): A sequence of weak models are trained consecutively, where each model learns from the errors of the previous model
 
-##Results: 
+## Results: 
 
 Table 1: Summary Confusion Matrices for 6 models
 
@@ -62,8 +61,8 @@ Table 2: Top 5 Features in Order of Importance from the Balanced Random Forest C
 Table 2: Accuracy and Imbalanced Classification Report Summary for 6 models
 
 
-##Summary: 
+## Summary: 
 
 With reduction of loan default rates as the objective, increased recall of the model to the minority class (high-risk loans) is the prioritized criteria for selecting an appropriate model.  
 
-Of the 6 models evaluated, the Easy Ensemble (AdaBoost) model shows the greatest recall (92%), least number of false negatives (983), highest accuracy (93%), better precision (9%), and best F1 score.  These figures should be translated to real dollars and compared to the current protocol for evaluating loan applications to determine if this model is an improvement.  If not, there may be other algorithms or features to include for further testing.
+Of the 6 models evaluated, the Easy Ensemble (AdaBoost) model shows the greatest recall (92%), least number of false negatives (983), highest accuracy (93%), better precision (9%), and best F1 score.  These figures should be translated to real dollars in revenue and effort and compared to the current protocol for evaluating loan applications to determine if this model is an improvement to the current procedure.  If not, there may be other algorithms or features to include for further testing.
